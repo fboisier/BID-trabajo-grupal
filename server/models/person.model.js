@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const PersonSchema = new mongoose.Schema({
     nombre: { 
         type: String,
-        minlength:[10, 'El minimo es de 10'] 
+        minlength:[13, 'El minimo es de 13'] 
     },
     apellido: { type: String },
     edad: {type: Number},
