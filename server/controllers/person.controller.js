@@ -21,6 +21,22 @@ module.exports.createPerson = async (request, response) => {
     }
 }
 
+
+module.exports.createPerson = async (request, response) => {
+    try {
+        const { nombre, apellido, edad } = request.body;
+        persona = await Person.create({
+            nombre,
+            apellido,
+            edad
+        });
+        response.json(persona);
+    } catch (error) {
+        response.status(400);
+        response.json(error);
+    }
+}
+
 module.exports.getAllPeople = async (request, response) => {
     try {
         const persons = await Person.find({})
